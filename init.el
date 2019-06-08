@@ -6,15 +6,12 @@
 (add-to-list 'package-archives
             '("marmalade" . "https://marmalade-repo.org/packages/") t)
 
-;;(defvar my-packages '(ido-ubiquitous idle-highlight-mode paredit better-defaults))
+(defvar my-packages '(auctex solarized-theme ido-ubiquitous idle-highlight-mode paredit better-defaults))
     
-;;(package-initialize)
-;;(dolist (p my-packages)
-;;  (when (not (package-installed-p p))
-;;    (package-install p)))
-
-(add-to-list 'load-path "~/.emacs.d/elpa/emacs-application-framework")
-(require 'eaf)
+(package-initialize)
+  (dolist (p my-packages)
+  (when (not (package-installed-p p))
+    (package-install p)))
 
 ;; set a default font
 (when (member "DejaVu Sans Mono" (font-family-list))
@@ -37,45 +34,6 @@
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
-
-(defun xxtest ()
-  "test"
-  (interactive)
-  (let (myline)
-    (setq myline (thing-at-point 'line) )
-    (setq matched (string-match "{\\([^}]+\\)}" myline))
-    (start-process "inks" nil "inkscape"  (concat (file-name-directory buffer-file-name)  "images/" (match-string 1 myline)))
-    ;;(message "got this %s" (concat (file-name-directory buffer-file-name) "images/" (match-string 1 myline)))
-    ;;(message "got this: %s" myline)
-    ) )
-;;  \includegraphics[width=1\textwidth]{SoC-steps.pdf}
-;; make latexmk available via C-c C-c
-;;(add-hook 'LaTeX-mode-hook (lambda ()
-;;  (push
-;;    '("latexmk" "latexmk -pdf %s" TeX-run-TeX nil t
-;;      :help "Run latexmk on file")
-;;    TeX-command-list)))
-;;(add-hook 'TeX-mode-hook '(lambda () (setq TeX-command-default "latexmk")))
-
-;;(require 'recentf)
-;;
-;;;; get rid of `find-file-read-only' and replace it with something
-;;;; more useful.
-;;(global-set-key (kbd "C-x C-r") 'ido-recentf-open)
-;;
-;;;; enable recent files mode.
-;;(recentf-mode t)
-;;
-;;; 50 files ought to be enough.
-;;(setq recentf-max-saved-items 50)
-;;
-;;(defun ido-recentf-open ()
-;;  "Use `ido-completing-read' to \\[find-file] a recent file"
-;;  (interactive)
-;;  (if (find-file (ido-completing-read "Find recent file: " recentf-list))
-;;      (message "Opening file...")
-;;    (message "Aborting")))
-;;
 
 (desktop-save-mode 1)
 ;;--no-desktop
