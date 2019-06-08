@@ -43,14 +43,3 @@
 ;;(require 'saveplace)                          ;; get the package
 
 
-;;(setq ido-enable-flex-matching t)
-;;(setq ido-everywhere t)
-;;(ido-mode 1)
-;;(require 'find-dired)
-;;(setq find-ls-option '("-print0 | xargs -0 ls -ld" . "-ld"))
-;;
-;;(require 'eshell)
-;;(require 'em-smart)
-;;(setq eshell-where-to-jump 'begin)
-;;(setq eshell-review-quick-commands nil)
-;;(setq eshell-smart-space-goes-to-end t)
