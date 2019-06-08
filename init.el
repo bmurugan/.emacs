@@ -6,7 +6,7 @@
 (add-to-list 'package-archives
             '("marmalade" . "https://marmalade-repo.org/packages/") t)
 
-(defvar my-packages '(auctex solarized-theme ido-ubiquitous idle-highlight-mode paredit better-defaults))
+(defvar my-packages '(auctex solarized-theme ido-completing-read+ idle-highlight-mode paredit better-defaults))
 
 (package-initialize)
   (dolist (p my-packages)
